@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="michaelvu" content="Michael Vu" />
+
+    <title>WEB222 Music App</title>
+    <!-- Classless CSS Stylesheet - https://watercss.kognise.dev/ -->
+    <link rel="stylesheet" href="./css/water.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Back to home page</a>
+    </nav>
+    <form id="artist-request-form" method="post" action="https://httpbin.org/post">
+      <label for="artist-name">Artist Name:</label>
+      <input type="text" id="artist-name" name="artist-name" required />
+      <label for="genre">Genre</label>
+      <input type="text" list="genres" name="genre-selection" required />
+      <datalist id="genres">
+        <option value="R&B"></option>
+        <option value="Rap"></option>
+        <option value="Pop"></option>
+        <option value="Techno"></option>
+        <option value="Country"></option>
+        <option value="Jazz"></option>
+        <option value="Rock"></option>
+        <option value="Dance"></option>
+        <option value="House"></option>
+        <option value="Reggae"></option>
+      </datalist>
+      <label for="social-medias">Any URLs for this artist? (Must be a https:// URL)</label>
+      <input type="url" id="social-medias" name="social-medias" />
+      <label for="artist-songs">Songs or Videos to add: (Must be a https:// URL)</label>
+      <div id="artist-video-container">
+        <input
+          type="url"
+          id="artist-video"
+          name="media-urls[]"
+          placeholder="Enter song/video URL"
+        />
+      </div>
+      <button type="button" id="add-btn" value="add-btn">Add</button>
+      <fieldset>
+        <legend>Is the song explicit?</legend>
+        <ul>
+          <li>
+            <input
+              type="radio"
+              name="explicit-setting"
+              id="explicit-false"
+              value="No"
+              checked
+            /><label for="explicit-false">No</label>
+          </li>
+          <li>
+            <input type="radio" name="explicit-setting" id="explicit-true" value="Yes" /><label
+              for="explicit-true"
+              >Yes</label
+            >
+          </li>
+        </ul>
+      </fieldset>
+      <label for="description">Why do you think this artist should be added?</label>
+      <textarea id="description" name="description"></textarea>
+      <input type="submit" name="artist-submit" value="Submit" />
+      <input type="reset" value="Clear all fields" />
+    </form>
+
+    <script>
+      document.getElementById("add-btn").addEventListener("click", () => {
+        const container = document.getElementById("artist-video-container");
+
+        const newInput = document.createElement("input");
+        newInput.type = "url";
+        newInput.name = "media-urls[]";
+        newInput.placeholder = "Enter song/video URL";
+        newInput.style.display = "block";
+        newInput.style.marginBottom = "8px";
+
+        container.appendChild(newInput);
+      });
+    </script>
+  </body>
+</html>

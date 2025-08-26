@@ -1,0 +1,47 @@
+#songs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin-top: 5px;
+  text-align: center;
+}
+
+#email-fields {
+  display: flex;
+}
+
+input {
+  margin: 10px;
+}
+
+.request-artist-button {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+footer {
+  margin-top: 20px;
+}
