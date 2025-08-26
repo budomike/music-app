@@ -80,6 +80,3 @@ function createSongCard(song) {
 
   return card;
 }
-
-// For debugging, display all of our data in the console. You can remove this later.
-console.log({ artists, songs }, "App Data");
