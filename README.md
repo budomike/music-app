@@ -9,4 +9,5 @@ Users can fill out a form to suggest new artists and songs.
 Currently, the form is set up to submit data to httpbin.org, and is displayed as a JSON response.
 
 <img src="https://i.imgur.com/XhzY2WT.png" alt="Request Page Screenshot" width="500"/>
+<img src="https://i.imgur.com/H6LvROB.png" alt="Request Page Screenshot" width="500"/>
 
